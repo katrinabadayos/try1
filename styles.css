@@ -1,0 +1,53 @@
+/* Contact Form Container */
+.contact__container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #1e1e1e; /* dark background, adjust as needed */
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* Inputs and Textarea */
+.contact__container input,
+.contact__container textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact__container input:focus,
+.contact__container textarea:focus {
+  outline: none;
+  border-color: #ff6a00; /* highlight color */
+}
+
+/* Button */
+.contact__container .btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #ff6a00;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact__container .btn:hover {
+  background: #ff8700;
+}
+
+/* Thank You Message */
+#form-message {
+  display: none;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #00ff7f;
+}
