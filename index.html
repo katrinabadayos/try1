@@ -6,6 +6,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+  <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // stop normal page reload
+
+      const formData = new FormData(form);
+
+      try {
+        await fetch("/", {
+          method: "POST",
+          body: formData,
+        });
+
+        alert("Thank you! Your message has been sent."); // popup
+        form.reset(); // clear fields
+      } catch (error) {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    });
+  </script>
   <body>
     <section class="section__container contact__container" id="contact">
       <p class="section__subheader"></p>
@@ -16,13 +37,10 @@
       </p>
 
       <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
-
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="User-name" placeholder="Name" required />
+        <input type="email" name="User-email" placeholder="Email" required />
         <textarea name="message" placeholder="Message" required></textarea>
         <button class="btn" type="submit">Submit Message</button>
-        <p id="form-message">Thank you! Your message has been sent.</p>
       </form>
     </section>
   </body>
